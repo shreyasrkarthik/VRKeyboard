@@ -94,6 +94,7 @@ ScriptsOnlyBuild:
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
     - TMPro.TextMeshPro
+    - TMPro.TextMeshProUGUI
     Unity.XR.Management.Editor.dll:
     - UnityEditor.XR.Management.XRGeneralSettingsPerBuildTarget
     Unity.XR.Management.dll:
@@ -108,6 +109,8 @@ ScriptsOnlyBuild:
     - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
+    - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.GraphicRaycaster
   sceneClasses:
     Assets/Scenes/Keypad.unity:
     - Class: 1
@@ -156,6 +159,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 111
       Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1736}
     - Class: 114
       Script: {instanceID: 1932}
     - Class: 114
@@ -209,9 +214,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3216}
     - Class: 114
+      Script: {instanceID: 3252}
+    - Class: 114
       Script: {instanceID: 3430}
     - Class: 114
       Script: {instanceID: 3478}
+    - Class: 114
+      Script: {instanceID: 3496}
     - Class: 114
       Script: {instanceID: 3662}
     - Class: 114
@@ -319,6 +328,10 @@ ScriptsOnlyBuild:
     - Class: 199
       Script: {instanceID: 0}
     - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
       Script: {instanceID: 0}
     - Class: 224
       Script: {instanceID: 0}
@@ -1550,7 +1563,7 @@ ScriptsOnlyBuild:
     className: InteractableRegistry
   - hash:
       serializedVersion: 2
-      Hash: 62da9beadee19a3099f4fc1a8318f3cf
+      Hash: 371ffe47573e36df50641afed3ffbff2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: KeypadManager
@@ -3532,4 +3545,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/Keypad.unity
   - Assets/Scenes/SampleScene.unity
-  playerPath: /Users/shreyask/Downloads/OculusIntegration_Template/Build/V4.apk
+  playerPath: /Users/shreyask/Downloads/OculusIntegration_Template/Build/V5.apk

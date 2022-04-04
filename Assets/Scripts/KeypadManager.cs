@@ -4,8 +4,13 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 using System;
+using System.Text;
+using System.IO;
 using Random = UnityEngine.Random;
 
+#if ENABLE_CLOUD_SERVICES_ANALYTICS
+using UnityEngine.Analytics;
+#endif
 public class KeypadManager : MonoBehaviour
 {
     public TMP_Text inputText;
@@ -13,6 +18,10 @@ public class KeypadManager : MonoBehaviour
     public TMP_Text wpmText;
     public TMP_Text errorRateText;
     public string ResultSceneName;
+    public string KeyboardType;
+    public string InputType;
+    public bool AudioFeedbackFlag;
+    public bool VisualFeedbackFlag;
     bool flagTimer = true;
     DateTime startTime;
     DateTime endTime;
@@ -25,14 +34,23 @@ public class KeypadManager : MonoBehaviour
     List<string> wpmRates = new List<string>();
     List<string> errorRates = new List<string>();
     private System.Random rand;
+    private List<string[]> rowData = new List<string[]>();
+    int id;
+    string filePath;
 
 
     // Start is called before the fiorst frame update
     void Start()
     {
+        VisualFeedbackFlag = true;
+        createCSV();
+        id = 1;
+
         randomInt = Random.Range(0, sentences.Length);
         sceneNumber = 0;
         followText.text = sentences[randomInt];
+        Debug.Log("Start:   " + AnalyticsSessionInfo.userId + " " + AnalyticsSessionInfo.sessionState + " " + AnalyticsSessionInfo.sessionId + " " + AnalyticsSessionInfo.sessionElapsedTime);
+ 
     }
 
     //Update is called once per frame
@@ -94,12 +112,25 @@ public class KeypadManager : MonoBehaviour
         }
         else {
             // Save wpm and error rates and then load new sentence.
+            addDataToCSV(followText.text, wpmVal.ToString(), errorRate);
+            
+            // Set new sentence settings
             wpmRates.Add(wpmVal.ToString());
             errorRates.Add(errorRate);
             followText.text = sentences[randomInt];
             inputText.text = "";
         }
 
+    }
+
+
+    private void addDataToCSV(string sentence, string wpm, string error_rate) {
+        
+        string sb = AnalyticsSessionInfo.sessionId.ToString() + "," + AudioFeedbackFlag.ToString() + "," + VisualFeedbackFlag.ToString() + "," + KeyboardType + "," + InputType + "," + sentence + "," + wpm + "," + error_rate;
+        StreamWriter outStream = System.IO.File.AppendText(filePath);
+        outStream.WriteLine(sb);
+        outStream.Close();
+        id += 1;
     }
 
     private string getErrorRateAsString(string s, string t)
@@ -137,6 +168,78 @@ public class KeypadManager : MonoBehaviour
             }
         }
         return d[n, m];
+    }
+
+    //Credits: https://sushanta1991.blogspot.com/2015/02/how-to-write-data-to-csv-file-in-unity.html
+    void createCSV() {
+
+        //AutoIncrementUserID,AudioFeedback,Hapticfeedback,KeyboardType,InputType,Sentence,WPM,ErrorRate
+        // Creating First row of titles manually..
+
+        Debug.Log("created csv");
+        string[] rowDataTemp = new string[8];
+        rowDataTemp[0] = "SessionID";
+        rowDataTemp[1] = "AudioFeedback";
+        rowDataTemp[2] = "VisualFeedback";
+        rowDataTemp[3] = "KeyboardType"; // 3D or 2D
+        rowDataTemp[4] = "InputType"; // Hand or Controller
+        rowDataTemp[5] = "Sentence";
+        rowDataTemp[6] = "WPM";
+        rowDataTemp[7] = "ErrorRate";
+        rowData.Add(rowDataTemp);
+
+        // You can add up the values in as many cells as you want.
+        // for(int i = 0; i < 10; i++){
+        //     rowDataTemp = new string[3];
+        //     rowDataTemp[0] = "Sushanta"+i; // name
+        //     rowDataTemp[1] = ""+i; // ID
+        //     rowDataTemp[2] = "$"+UnityEngine.Random.Range(5000,10000); // Income
+        //     rowData.Add(rowDataTemp);
+        // }
+
+        string[][] output = new string[rowData.Count][];
+
+        for(int i = 0; i < output.Length; i++){
+            output[i] = rowData[i];
+        }
+
+        int length = output.GetLength(0);
+        string delimiter = ",";
+
+        StringBuilder sb = new StringBuilder();
+        
+        for (int index = 0; index < length; index++)
+            sb.AppendLine(string.Join(delimiter, output[index]));
+        
+        Debug.Log("before path");
+
+        filePath = getPath();
+        Debug.Log("cnnreated csv");
+        StreamWriter outStream;
+        if(!System.IO.File.Exists(filePath)) {
+            outStream = System.IO.File.CreateText(filePath);
+            outStream.WriteLine(sb);
+            outStream.Close();
+        }
+    }
+
+    private string getPath(){
+        Debug.Log("im here");
+
+        #if UNITY_EDITOR
+        Debug.Log("Unity");
+        Debug.Log(Application.dataPath.ToString());
+        return Application.dataPath +"/CSV/"+"keyboardDataTeam4.csv";
+        #elif UNITY_ANDROID
+        return Application.persistentDataPath+"keyboardDataTeam4.csv";
+        #elif UNITY_IPHONE
+        return Application.persistentDataPath+"/"+"keyboardDataTeam4.csv";
+        #else
+        Debug.Log("else");
+        Debug.Log(Application.dataPath.ToString());
+        return Application.dataPath +"/"+"keyboardDataTeam4.csv";
+        Debug.Log(Application.dataPath);
+        #endif
     }
 }
 

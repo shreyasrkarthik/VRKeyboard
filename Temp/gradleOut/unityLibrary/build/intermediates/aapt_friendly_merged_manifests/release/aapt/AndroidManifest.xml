@@ -84,7 +84,7 @@
             android:value="portrait|landscape" />
         <meta-data
             android:name="unity.build-id"
-            android:value="5d3bbb79-6bcc-4961-ae94-0cd775a709c4" />
+            android:value="efd7bc75-6e08-496e-8bb0-b0ea14879669" />
         <meta-data
             android:name="com.oculus.handtracking.frequency"
             android:value="HIGH" />
