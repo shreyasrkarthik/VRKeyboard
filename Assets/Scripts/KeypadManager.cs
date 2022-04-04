@@ -15,6 +15,8 @@ public class KeypadManager : MonoBehaviour
     DateTime endTime;
     string startStr;
     int startInt;
+    string[] sentences = {"Good to know it exists", "Need to watch closely", "I am on a conference call", "Please revise accordingly", "I am glad you are involved",
+     "Thanks again for your help", "It is not working very well"};
 
     // Start is called before the fiorst frame update
     void Start()
@@ -31,11 +33,13 @@ public class KeypadManager : MonoBehaviour
     // This method updates the text in the input 
     public void UpdateText(string character)
     {
-        if(flagTimer) {
+        if(flagTimer == true) {
             flagTimer = false;
             startTime = DateTime.Now;
             startStr = startTime.ToString("HHmmss");
             startInt = Int32.Parse(startStr);
+            inputText.text = "";
+            Debug.Log("Input: "+ inputText.text);
         }
 
         if (character == "<-") {
@@ -66,7 +70,7 @@ public class KeypadManager : MonoBehaviour
         int length = inputText.text.Length;
         float wpmVal = ((length * 60 * 0.2f) / temp);
         wpmText.text =  "WPM: " + wpmVal.ToString();
-        Debug.Log("WPM: " + errorRate);
+        Debug.Log("WPM: " + wpmVal.ToString());
 
     }
 
@@ -105,6 +109,11 @@ public class KeypadManager : MonoBehaviour
             }
         }
         return d[n, m];
+    }
+
+    private void ReloadScene() {
+
+
     }
 }
 
