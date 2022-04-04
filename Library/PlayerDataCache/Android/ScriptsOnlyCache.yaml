@@ -5,9 +5,12 @@ ScriptsOnlyBuild:
     - Normal.Realtime.Examples.CubePlayer
     - Normal.Realtime.Examples.HoverbirdPlayer
     - Normal.Realtime.Examples.VoiceMouthMove
+    - OVRTouchSample.Hand
+    - OVRTouchSample.HandPose
     - OvrAvatarSettings
     Normal.Realtime.dll:
     - Normal.Realtime.RealtimeAvatar
+    - Normal.Realtime.RealtimeAvatarManager
     - Normal.Realtime.RealtimeAvatarVoice
     Normcore.Editor.dll:
     - Normal.Internal.DirectoryFinder
@@ -15,6 +18,7 @@ ScriptsOnlyBuild:
     Normcore.dll:
     - Normal.NormcoreAppSettings
     - Normal.NormcoreProjectSettings
+    - Normal.Realtime.Realtime
     - Normal.Realtime.RealtimeTransform
     - Normal.Realtime.RealtimeView
     Oculus.Interaction.Samples.dll:
@@ -70,10 +74,15 @@ ScriptsOnlyBuild:
     Oculus.VR.dll:
     - OVRCameraRig
     - OVRControllerHelper
+    - OVRDebugInfo
+    - OVRGrabber
     - OVRHand
     - OVRHeadsetEmulator
     - OVRManager
+    - OVRPlayerController
     - OVRRuntimeSettings
+    - OVRSceneSampleController
+    - OVRScreenFade
     - OVRSkeleton
     Unity.Mobile.AndroidLogcat.Editor.dll:
     - Unity.Android.Logcat.AndroidLogcatManager
@@ -100,7 +109,7 @@ ScriptsOnlyBuild:
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
   sceneClasses:
-    Assets/Oculus/Interaction/Samples/Scenes/Keypad.unity:
+    Assets/Scenes/Keypad.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -312,6 +321,91 @@ ScriptsOnlyBuild:
     - Class: 213
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/SampleScene.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 90
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 2138}
+    - Class: 114
+      Script: {instanceID: 2186}
+    - Class: 114
+      Script: {instanceID: 2270}
+    - Class: 114
+      Script: {instanceID: 2310}
+    - Class: 114
+      Script: {instanceID: 2600}
+    - Class: 114
+      Script: {instanceID: 2950}
+    - Class: 114
+      Script: {instanceID: 3478}
+    - Class: 114
+      Script: {instanceID: 3592}
+    - Class: 114
+      Script: {instanceID: 3846}
+    - Class: 114
+      Script: {instanceID: 4288}
+    - Class: 114
+      Script: {instanceID: 4856}
+    - Class: 114
+      Script: {instanceID: 4864}
+    - Class: 114
+      Script: {instanceID: 4866}
+    - Class: 114
+      Script: {instanceID: 4950}
+    - Class: 114
+      Script: {instanceID: 5104}
+    - Class: 114
+      Script: {instanceID: 5346}
+    - Class: 114
+      Script: {instanceID: 5698}
+    - Class: 114
+      Script: {instanceID: 5726}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 136
+      Script: {instanceID: 0}
+    - Class: 137
+      Script: {instanceID: 0}
+    - Class: 143
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -1456,7 +1550,7 @@ ScriptsOnlyBuild:
     className: InteractableRegistry
   - hash:
       serializedVersion: 2
-      Hash: 70e987634932812c65cb3dfee10bfb38
+      Hash: 62da9beadee19a3099f4fc1a8318f3cf
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: KeypadManager
@@ -3436,5 +3530,6 @@ ScriptsOnlyBuild:
     className: TrackSegment
   platform: 13
   scenePathNames:
-  - Assets/Oculus/Interaction/Samples/Scenes/Keypad.unity
+  - Assets/Scenes/Keypad.unity
+  - Assets/Scenes/SampleScene.unity
   playerPath: /Users/shreyask/Downloads/OculusIntegration_Template/Build/V4.apk

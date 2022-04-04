@@ -18609,6 +18609,7 @@ MonoBehaviour:
   followText: {fileID: 699193017}
   wpmText: {fileID: 1718190437}
   errorRateText: {fileID: 1792435586}
+  ResultSceneName: SampleScene
 --- !u!1 &1119416342
 GameObject:
   m_ObjectHideFlags: 0
@@ -27957,7 +27958,7 @@ MonoBehaviour:
   _editor: {fileID: 1698467607}
   _colorShaderPropertyName: _Color
   _normalColorState:
-    Color: {r: 1, g: 1, b: 1, a: 0.14117648}
+    Color: {r: 0.65882355, g: 0, b: 0, a: 0.39215687}
     ColorCurve:
       serializedVersion: 2
       m_Curve:

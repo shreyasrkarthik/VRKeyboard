@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 using System;
+using Random = UnityEngine.Random;
 
 public class KeypadManager : MonoBehaviour
 {
@@ -10,18 +12,27 @@ public class KeypadManager : MonoBehaviour
     public TMP_Text followText;
     public TMP_Text wpmText;
     public TMP_Text errorRateText;
+    public string ResultSceneName;
     bool flagTimer = true;
     DateTime startTime;
     DateTime endTime;
     string startStr;
     int startInt;
-    string[] sentences = {"Good to know it exists", "Need to watch closely", "I am on a conference call", "Please revise accordingly", "I am glad you are involved",
+    static string[] sentences = {"Good to know it exists", "Need to watch closely", "I am on a conference call", "Please revise accordingly", "I am glad you are involved",
      "Thanks again for your help", "It is not working very well"};
+    int sceneNumber;
+    int randomInt;
+    List<string> wpmRates = new List<string>();
+    List<string> errorRates = new List<string>();
+    private System.Random rand;
+
 
     // Start is called before the fiorst frame update
     void Start()
     {
-
+        randomInt = Random.Range(0, sentences.Length);
+        sceneNumber = 0;
+        followText.text = sentences[randomInt];
     }
 
     //Update is called once per frame
@@ -72,6 +83,23 @@ public class KeypadManager : MonoBehaviour
         wpmText.text =  "WPM: " + wpmVal.ToString();
         Debug.Log("WPM: " + wpmVal.ToString());
 
+        randomInt += 1;
+        randomInt = randomInt % 6;
+        sceneNumber += 1;
+
+        if (sceneNumber == 6) {
+            // Load result Scene;
+            followText.text = "All six scenes loaded";
+            SceneManager.LoadScene(ResultSceneName);
+        }
+        else {
+            // Save wpm and error rates and then load new sentence.
+            wpmRates.Add(wpmVal.ToString());
+            errorRates.Add(errorRate);
+            followText.text = sentences[randomInt];
+            inputText.text = "";
+        }
+
     }
 
     private string getErrorRateAsString(string s, string t)
@@ -109,11 +137,6 @@ public class KeypadManager : MonoBehaviour
             }
         }
         return d[n, m];
-    }
-
-    private void ReloadScene() {
-
-
     }
 }
 

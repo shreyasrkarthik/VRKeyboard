@@ -21,8 +21,11 @@ EditorBuildSettings:
     path: Assets/Oculus/Interaction/Samples/Scenes/ComplexGrab.unity
     guid: b4db51bf4876fde4ebaca05af639db73
   - enabled: 1
-    path: Assets/Oculus/Interaction/Samples/Scenes/Keypad.unity
+    path: Assets/Scenes/Keypad.unity
     guid: 93bcb7bb0e865400ab9024616f440312
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 801536756e6ae6543a13f959b432db19, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 740ef12c03ef3114180a1bdf343737e2, type: 2}
