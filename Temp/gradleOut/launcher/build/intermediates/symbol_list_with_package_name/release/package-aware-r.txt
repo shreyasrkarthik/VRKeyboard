@@ -1,4 +1,4 @@
-com.XRLabTeaching.OculusIntegration_Template
+com.XRLabTeaching.CS5097_FP3_Group04
 id unitySurfaceView
 mipmap app_icon
 mipmap app_icon_round

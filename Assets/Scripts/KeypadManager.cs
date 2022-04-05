@@ -107,7 +107,6 @@ public class KeypadManager : MonoBehaviour
 
         if (sceneNumber == 6) {
             // Load result Scene;
-            followText.text = "All six scenes loaded";
             SceneManager.LoadScene(ResultSceneName);
         }
         else {

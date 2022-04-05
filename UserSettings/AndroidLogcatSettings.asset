@@ -2,52 +2,70 @@
     "m_SelectedDeviceId": "1PASH9AM490205",
     "m_SelectedPackage": {
         "deviceId": "1PASH9AM490205",
-        "name": "com.XRLabTeaching.OculusIntegration_Template",
-        "processId": 32148,
+        "name": "com.XRLabTeaching.CS5097_FP3_Group04",
+        "processId": 30537,
         "exited": false
     },
     "m_SelectedPriority": 0,
     "m_KnownPackagesForSerialization": [
         {
             "deviceId": "1PASH9AM490205",
-            "name": "com.XRLabTeaching.OculusIntegration_Template",
-            "processId": 29849,
+            "name": "com.oculus.shellenv",
+            "processId": 1694,
             "exited": false
         },
         {
             "deviceId": "1PASH9AM490205",
             "name": "com.XRLabTeaching.OculusIntegration_Template",
-            "processId": 30219,
-            "exited": false
+            "processId": 17101,
+            "exited": true
         },
         {
             "deviceId": "1PASH9AM490205",
             "name": "com.XRLabTeaching.OculusIntegration_Template",
-            "processId": 30964,
-            "exited": false
+            "processId": 19370,
+            "exited": true
         },
         {
             "deviceId": "1PASH9AM490205",
             "name": "com.XRLabTeaching.OculusIntegration_Template",
-            "processId": 31117,
-            "exited": false
+            "processId": 20983,
+            "exited": true
         },
         {
             "deviceId": "1PASH9AM490205",
             "name": "com.XRLabTeaching.OculusIntegration_Template",
-            "processId": 31233,
+            "processId": 9540,
+            "exited": true
+        },
+        {
+            "deviceId": "1PASH9AM490205",
+            "name": "com.XRLabTeaching.CS5097_FP3_Group04",
+            "processId": 14931,
+            "exited": true
+        },
+        {
+            "deviceId": "1PASH9AM490205",
+            "name": "com.XRLabTeaching.CS5097_FP3_Group04",
+            "processId": 22065,
             "exited": false
         },
         {
             "deviceId": "1PASH9AM490205",
-            "name": "com.XRLabTeaching.OculusIntegration_Template",
-            "processId": 31787,
+            "name": "com.XRLabTeaching.CS5097_FP3_Group04",
+            "processId": 23985,
             "exited": false
         },
         {
             "deviceId": "1PASH9AM490205",
-            "name": "com.XRLabTeaching.OculusIntegration_Template",
-            "processId": 32148,
+            "name": "com.XRLabTeaching.CS5097_FP3_Group04",
+            "processId": 28759,
+            "exited": false
+        },
+        {
+            "deviceId": "1PASH9AM490205",
+            "name": "com.XRLabTeaching.CS5097_FP3_Group04",
+            "processId": 30537,
             "exited": false
         }
     ],

@@ -5,27 +5,27 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Oculus/Interaction/Samples/Scenes/BasicGrab.unity
-    guid: 13bd76582a631124699f410c1e007f8c
-  - enabled: 0
-    path: Assets/Oculus/Interaction/Samples/Scenes/BasicPoke.unity
-    guid: e6661efa421761b4299803adcd8c1c9a
-  - enabled: 0
-    path: Assets/Oculus/Interaction/Samples/Scenes/BasicPoseDetection.unity
-    guid: 5661873a4cd8ad8469c072d3852197c2
-  - enabled: 0
-    path: Assets/Oculus/Interaction/Samples/Scenes/BasicRay.unity
-    guid: 7e040656f12f8dc44a6d88406081f26c
-  - enabled: 0
-    path: Assets/Oculus/Interaction/Samples/Scenes/ComplexGrab.unity
-    guid: b4db51bf4876fde4ebaca05af639db73
   - enabled: 1
-    path: Assets/Scenes/Keypad.unity
+    path: Assets/Scenes/Lobby.unity
+    guid: 522522eeb5be24b0a8728c9f7ed19d6a
+  - enabled: 1
+    path: Assets/Scenes/3DKeyboardWithHand.unity
     guid: 93bcb7bb0e865400ab9024616f440312
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Scenes/3DKeyboardWithController.unity
+    guid: 58c5db5b9cfc54706a085c640ff06d4d
+  - enabled: 1
+    path: Assets/Scenes/2DKeyboardWithController.unity
+    guid: 6c24a74ea9f1b4fed9e2138f967d505d
+  - enabled: 1
+    path: Assets/Scenes/2DKeyboardWithHand.unity
+    guid: 11946e45c937341dbb829476035d3262
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Results.unity
+    guid: b6a77134c81c74d1b9f6cf11cc2cae6e
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 801536756e6ae6543a13f959b432db19, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 740ef12c03ef3114180a1bdf343737e2, type: 2}
